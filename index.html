@@ -293,6 +293,35 @@
         font-size: 0.72rem;
       }
 
+      .projects {
+        margin-top: 26px;
+      }
+
+      .projects-title {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .projects-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.9rem;
+      }
+
+      .projects-list li {
+        padding: 7px 10px;
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(148, 163, 184, 0.45);
+      }
+
       .footer {
         padding: 0 28px 22px;
         font-size: 0.75rem;
@@ -353,6 +382,17 @@
             <span class="tag">Data analytics</span>
             <span class="tag">Python</span>
             <span class="tag">Experiments &amp; projects</span>
+          </div>
+
+          <div class="projects" aria-label="Projects">
+            <div class="projects-title">Projects</div>
+            <ul class="projects-list">
+              <li>Project 1 (details coming soon)</li>
+              <li>Project 2: Java Script Game (details coming soon)</li>
+            </ul>
+            <a href="https://github.com/kozeracki" target="_blank" rel="noreferrer">
+              View all projects on GitHub →
+            </a>
           </div>
 
           <div class="actions">
