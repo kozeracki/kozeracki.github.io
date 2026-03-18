@@ -27,6 +27,10 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         min-height: 100vh;
@@ -103,12 +107,29 @@
       }
 
       .top-nav a {
+        position: relative;
         color: var(--muted);
         text-decoration: none;
+        padding-bottom: 4px;
+      }
+
+      .top-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, #38bdf8, #6366f1);
+        transition: width 0.18s ease-out;
       }
 
       .top-nav a:hover {
         color: var(--text);
+      }
+
+      .top-nav a:hover::after {
+        width: 100%;
       }
 
       .content {
@@ -133,7 +154,7 @@
       }
 
       h1 {
-        font-size: clamp(2.25rem, 3vw, 2.7rem);
+        font-size: clamp(2.35rem, 3.2vw, 2.9rem);
         letter-spacing: -0.03em;
         margin: 0 0 8px;
       }
@@ -162,11 +183,11 @@
       }
 
       .intro {
-        font-size: 0.98rem;
-        color: #cbd5f5;
-        line-height: 1.7;
-        max-width: 36rem;
-        margin-bottom: 22px;
+        font-size: 1rem;
+        color: #e5e7eb;
+        line-height: 1.8;
+        max-width: 38rem;
+        margin-bottom: 24px;
       }
 
       .highlight-pill {
@@ -335,9 +356,10 @@
       }
 
       .projects-list li {
-        padding: 7px 10px;
+        padding: 8px 11px;
         border-radius: 12px;
-        background: rgba(15, 23, 42, 0.8);
+        background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+          rgba(15, 23, 42, 0.9);
         border: 1px solid rgba(148, 163, 184, 0.45);
       }
 
