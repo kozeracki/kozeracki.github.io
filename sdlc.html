@@ -696,7 +696,9 @@
               const hitPos = (state.ballY - (state.rightY + paddleH / 2)) / (paddleH / 2);
               state.ballVX = -Math.abs(state.ballVX); // ensure it goes left
               state.ballVY = hitPos * maxBallSpeed * 0.65;
-              state.ballVX = clamp(Math.abs(state.ballVX) * 1.03, baseBallSpeed, maxBallSpeed);
+              // Increase speed while preserving direction (must stay negative).
+              const nextSpeed = clamp(Math.abs(state.ballVX) * 1.03, baseBallSpeed, maxBallSpeed);
+              state.ballVX = -nextSpeed;
             }
 
             // Scoring
