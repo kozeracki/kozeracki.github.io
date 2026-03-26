@@ -431,10 +431,9 @@
           <div class="game-card" aria-label="Arcade game: Ping Pong">
             <h2 class="section-heading" id="arcade">Arcade – Ping Pong</h2>
             <p class="intro game-instructions">
-              Controls: <strong>W</strong>/<strong>S</strong> move the left
-              paddle. <strong>Arrow Up</strong>/<strong>Arrow Down</strong> move
-              the right paddle. After a point, press <strong>Space</strong> to
-              serve again.
+              Controls: <strong>W</strong>/<strong>S</strong> move the left paddle.
+              The right paddle is controlled by the computer. After a point,
+              press <strong>Space</strong> to serve again.
             </p>
 
             <canvas id="pongCanvas" tabindex="0" aria-label="Ping pong game canvas"></canvas>
@@ -503,8 +502,6 @@
         const keys = {
           w: false,
           s: false,
-          up: false,
-          down: false,
         };
 
         function setLive(msg) {
@@ -516,8 +513,6 @@
           const key = e.key;
           if (key === "w" || key === "W") keys.w = true;
           if (key === "s" || key === "S") keys.s = true;
-          if (key === "ArrowUp") keys.up = true;
-          if (key === "ArrowDown") keys.down = true;
 
           if (key === " " || key === "Spacebar") {
             if (state.phase === "ready") {
@@ -537,8 +532,6 @@
           const key = e.key;
           if (key === "w" || key === "W") keys.w = false;
           if (key === "s" || key === "S") keys.s = false;
-          if (key === "ArrowUp") keys.up = false;
-          if (key === "ArrowDown") keys.down = false;
         });
 
         function resize() {
@@ -652,21 +645,11 @@
             state.leftY += leftDir * paddleSpeed * dt;
             state.leftY = clamp(state.leftY, 10, logicalH - 10 - paddleH);
 
-            // Right paddle: player-controlled or falls back to AI if keys not pressed
-            let rightDir = 0;
-            if (keys.up) rightDir -= 1;
-            if (keys.down) rightDir += 1;
-            const rightIsHeld = keys.up || keys.down;
-
-            if (rightIsHeld) {
-              state.rightY += rightDir * paddleSpeed * dt;
-            } else {
-              // Simple AI: follow ball center with a speed limit
-              const target = state.ballY - paddleH / 2;
-              const delta = target - state.rightY;
-              const step = clamp(delta, -aiSpeed * dt, aiSpeed * dt);
-              state.rightY += step;
-            }
+            // Right paddle: AI-controlled (player only controls left)
+            const target = state.ballY - paddleH / 2;
+            const delta = target - state.rightY;
+            const step = clamp(delta, -aiSpeed * dt, aiSpeed * dt);
+            state.rightY += step;
             state.rightY = clamp(state.rightY, 10, logicalH - 10 - paddleH);
 
             // Ball movement
