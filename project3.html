@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project 3 – Career Report</title>
+    <meta
+      name="description"
+      content="Project 3 career report for Emilia Kozeracki."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fff7ed;
+        --bg-alt: #ffedd5;
+        --card: #ffffff;
+        --accent: #ea580c;
+        --accent-soft: rgba(234, 88, 12, 0.12);
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: rgba(148, 163, 184, 0.35);
+        --shadow-soft: 0 18px 45px rgba(148, 163, 184, 0.3);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+        line-height: 1.5;
+        background: radial-gradient(circle at top left, #fdba74 0, transparent 55%),
+          radial-gradient(circle at bottom right, #fb7185 0, transparent 55%), var(--bg);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .shell {
+        width: 100%;
+        max-width: 980px;
+        background: linear-gradient(180deg, #ffffff, #fff7ed);
+        border-radius: 32px;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(251, 146, 60, 0.35);
+        overflow: hidden;
+      }
+
+      .shell-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 18px;
+        background: linear-gradient(90deg, #ffedd5, #fff7ed);
+        border-bottom: 1px solid rgba(251, 146, 60, 0.35);
+      }
+      .dot { width: 10px; height: 10px; border-radius: 999px; }
+      .dot.red { background: #fb7185; }
+      .dot.amber { background: #fb923c; }
+      .dot.green { background: #34d399; }
+      .shell-title {
+        margin-left: auto;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .top-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 14px 28px 0;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+      .top-nav a {
+        color: #9a3412;
+        text-decoration: none;
+        padding: 6px 10px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(251, 146, 60, 0.28);
+      }
+
+      .content {
+        padding: 26px 28px 28px;
+        display: grid;
+        gap: 12px;
+      }
+      h1 {
+        font-size: clamp(2.1rem, 3vw, 2.6rem);
+        letter-spacing: -0.03em;
+        margin: 0 0 6px;
+      }
+      .name-accent {
+        background: linear-gradient(120deg, #ea580c, #db2777, #7c3aed);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .subtitle {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .report-card {
+        background: radial-gradient(circle at top left, rgba(251, 146, 60, 0.22), transparent 55%), #fff;
+        border-radius: 18px;
+        border: 1px solid rgba(251, 146, 60, 0.45);
+        padding: 14px;
+      }
+      .report-card h2 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+      .report-card p { margin: 0; color: #374151; }
+      .footer {
+        padding: 0 28px 22px;
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell" aria-label="Project 3 Career Report">
+      <div class="shell-header">
+        <div class="dot red"></div><div class="dot amber"></div><div class="dot green"></div>
+        <div class="shell-title">Project 3 · Career Report</div>
+      </div>
+
+      <div class="top-nav" aria-label="Page navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="project2-js-game/index.html">Project 2 Game</a>
+        <a href="sdlc.html">SDLC Page</a>
+      </div>
+
+      <section class="content">
+        <h1><span class="name-accent">Project 3: Career Report</span></h1>
+        <p class="subtitle">Environmental Permitting and Compliance Engineer</p>
+
+        <article class="report-card">
+          <h2>1. Career Overview</h2>
+          <p>After graduation with Environmental Engineering and a Data Analytics minor, the target role is Environmental Permitting and Compliance Engineer in consulting. Core work includes permitting applications, legal compliance checks, monitoring, impact analysis, and inspections.</p>
+        </article>
+
+        <article class="report-card">
+          <h2>2. AI Disruption</h2>
+          <p>AI can reduce repetitive administrative work by automating permit paperwork, standardizing submissions, and flagging real-time violations in monitoring systems.</p>
+        </article>
+
+        <article class="report-card">
+          <h2>3. AI Benefits</h2>
+          <p>AI helps shift effort from repetitive tasks to strategy and judgement. It can accelerate regulatory research, improve prediction models, and provide faster monitoring alerts.</p>
+        </article>
+
+        <article class="report-card">
+          <h2>4. Gaining an Advantage</h2>
+          <p>Use AI as a quality pre-check before permit submission, apply AI-supported analysis on environmental datasets, and communicate technical findings in plain language for non-technical audiences.</p>
+        </article>
+
+        <article class="report-card">
+          <h2>5. Action Plan</h2>
+          <p>Over the next year: (1) deepen technical data skills in Excel/Python/GIS/R, (2) improve writing and communication using AI-assisted drafting, and (3) track regulation updates using AI summaries.</p>
+        </article>
+
+        <article class="report-card">
+          <h2>6. Sources and AI Use</h2>
+          <p>Sources include internship experience, resume, LinkedIn, and company materials. AI tools were used to improve writing clarity and flow.</p>
+        </article>
+
+      </section>
+      <footer class="footer">Full version available in <a href="career-report.md">career-report.md</a>.</footer>
+    </main>
+  </body>
+</html>
+
