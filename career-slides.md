@@ -1,3 +1,34 @@
+---
+marp: true
+theme: default
+paginate: true
+style: |
+  section {
+    background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 100%);
+    color: #1f2937;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3 {
+    color: #9a3412;
+  }
+  h1 {
+    border-bottom: 3px solid #ea580c;
+    padding-bottom: 0.2em;
+  }
+  strong {
+    color: #c2410c;
+  }
+  a {
+    color: #db2777;
+  }
+  code {
+    background: rgba(251, 146, 60, 0.15);
+    color: #7c2d12;
+    border-radius: 6px;
+    padding: 0.1em 0.3em;
+  }
+---
+
 # Career Report Summary
 ## Environmental Permitting and Compliance Engineer
 ### Emilia Kozeracki  
