@@ -2,7 +2,6 @@
 ## Environmental Permitting and Compliance Engineer
 ### Emilia Kozeracki  
 ### Intro to AI (DA 109)  
-### February 2026
 
 ---
 
