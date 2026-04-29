@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Presentation Materials – Emilia Kozeracki</title>
+    <meta
+      name="description"
+      content="Presentation materials page for Emilia Kozeracki, including the career report Word document and PowerPoint presentation."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fff7ed;
+        --card: #ffffff;
+        --accent: #ea580c;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: rgba(148, 163, 184, 0.35);
+        --shadow-soft: 0 18px 45px rgba(148, 163, 184, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+        background: radial-gradient(circle at top left, #fdba74 0, transparent 55%),
+          radial-gradient(circle at bottom right, #fb7185 0, transparent 55%),
+          var(--bg);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .shell {
+        width: 100%;
+        max-width: 980px;
+        background: linear-gradient(180deg, #ffffff, #fff7ed);
+        border-radius: 32px;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(251, 146, 60, 0.35);
+        overflow: hidden;
+        backdrop-filter: blur(24px);
+      }
+
+      .shell-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 18px;
+        background: linear-gradient(90deg, #ffedd5, #fff7ed);
+        border-bottom: 1px solid rgba(251, 146, 60, 0.35);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+      }
+
+      .dot.red {
+        background: #fb7185;
+      }
+
+      .dot.amber {
+        background: #fb923c;
+      }
+
+      .dot.green {
+        background: #34d399;
+      }
+
+      .shell-title {
+        margin-left: auto;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .top-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 14px 28px 0;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9a3412;
+      }
+
+      .top-nav a {
+        position: relative;
+        color: #9a3412;
+        text-decoration: none;
+        padding: 6px 10px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(251, 146, 60, 0.28);
+      }
+
+      .top-nav a:hover {
+        color: var(--text);
+        background: #ffffff;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+        gap: 28px;
+        padding: 26px 28px 28px;
+      }
+
+      @media (max-width: 840px) {
+        body {
+          padding: 20px 14px;
+        }
+
+        .shell {
+          border-radius: 24px;
+        }
+
+        .content {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 3vw, 2.7rem);
+        letter-spacing: -0.03em;
+        margin: 0 0 8px;
+      }
+
+      .name-accent {
+        background: linear-gradient(120deg, #ea580c, #db2777, #7c3aed);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .section-heading {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--muted);
+        margin: 18px 0 10px;
+      }
+
+      .intro {
+        font-size: 1rem;
+        color: #374151;
+        line-height: 1.8;
+        max-width: 40rem;
+        margin-bottom: 22px;
+      }
+
+      .materials-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .material-card,
+      .side-card {
+        background: radial-gradient(circle at top left, rgba(251, 146, 60, 0.18), transparent 55%),
+          #fff;
+        border-radius: 18px;
+        border: 1px solid rgba(251, 146, 60, 0.35);
+        padding: 16px;
+      }
+
+      .material-type {
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9a3412;
+        margin-bottom: 8px;
+      }
+
+      .material-title {
+        font-size: 1.02rem;
+        font-weight: 700;
+        margin: 0 0 6px;
+      }
+
+      .material-desc,
+      .side-card p,
+      .side-card li {
+        font-size: 0.92rem;
+        color: #374151;
+      }
+
+      .material-meta {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      .material-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-size: 0.9rem;
+        border: 1px solid rgba(251, 146, 60, 0.35);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #ea580c, #db2777);
+        color: #fff;
+        border: none;
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: #9a3412;
+      }
+
+      .side-title {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .footer {
+        padding: 0 28px 22px;
+        font-size: 0.75rem;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      a {
+        color: #c2410c;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell" aria-label="Presentation materials page for Emilia Kozeracki">
+      <div class="shell-header">
+        <div class="dot red"></div>
+        <div class="dot amber"></div>
+        <div class="dot green"></div>
+        <div class="shell-title">Emilia Kozeracki · Intro to AI · Presentation Materials</div>
+      </div>
+
+      <div class="top-nav" aria-label="Page navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="project3.html">Career</a>
+        <a href="#materials">Presentation Materials</a>
+        <a href="sdlc.html">SDLC Page</a>
+      </div>
+
+      <section class="content">
+        <div>
+          <h1>
+            <span class="name-accent">Presentation Materials</span>
+          </h1>
+          <p class="subtitle">Downloadable course deliverables</p>
+
+          <p class="intro">
+            This page collects the final presentation files for my career report
+            project so they can be opened or downloaded directly from the website.
+          </p>
+
+          <h2 class="section-heading" id="materials">Files</h2>
+          <div class="materials-grid">
+            <article class="material-card">
+              <div class="material-type">PowerPoint Presentation</div>
+              <h2 class="material-title">Career Slides – Aesthetic PowerPoint</h2>
+              <p class="material-meta">File: <code>career-slides-aesthetic.pptx</code></p>
+              <p class="material-desc">
+                The polished PowerPoint version of my career presentation with the
+                updated slide design and editable presentation content.
+              </p>
+              <div class="material-actions">
+                <a class="btn btn-primary" href="career-slides-aesthetic.pptx">Open PowerPoint</a>
+                <a class="btn btn-secondary" href="career-slides-aesthetic.pptx" download>Download .pptx</a>
+              </div>
+            </article>
+
+            <article class="material-card">
+              <div class="material-type">Word Document</div>
+              <h2 class="material-title">Career Report – Word Document</h2>
+              <p class="material-meta">File: <code>career-report-converted.docx</code></p>
+              <p class="material-desc">
+                The Word version of my career report converted from Markdown and
+                formatted from the reference document.
+              </p>
+              <div class="material-actions">
+                <a class="btn btn-primary" href="career-report-converted.docx">Open Word Document</a>
+                <a class="btn btn-secondary" href="career-report-converted.docx" download>Download .docx</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <div class="side-title">Also Available</div>
+            <p style="margin-top: 0;">
+              If you want to review the project context before downloading the files,
+              you can visit the related course pages below.
+            </p>
+            <ul style="margin: 0; padding-left: 18px;">
+              <li><a href="project3.html">Career report page</a></li>
+              <li><a href="career-slides.html">Rendered slideshow</a></li>
+              <li><a href="career-report.md">Markdown report source</a></li>
+              <li><a href="career-slides.md">Markdown slideshow source</a></li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>Presentation files for Intro to AI</span>
+        <span>Hosted with GitHub Pages</span>
+      </footer>
+    </main>
+  </body>
+</html>
